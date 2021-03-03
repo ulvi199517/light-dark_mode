@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Kaushan+Script&family=Oswald&display=swap');
+
 :root {
   --primary-color: rgb(255, 92, 92);
   --primary-variant: #ff2d2d;
@@ -20,8 +22,10 @@
 }
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 body {
+  font-family: 'Comfortaa', sans-serif;
   margin: 0;
   color: var(--on-background);
   background-color: var(--background);
@@ -35,6 +39,7 @@ section {
   flex-direction: column;
 }
 h1 {
+  font-family: 'Kaushan Script', sans-serif;
   font-size: 100px;
   margin-bottom: 0;
 }
@@ -42,6 +47,7 @@ h1 {
 h2 {
   font-size: 32px;
   font-weight: normal;
+  color: var(--on-background-alt);
 }
 /* Navigation */
 nav {
@@ -52,6 +58,7 @@ nav {
   padding: 25px;
   width: 100vw;
   background: rgb(255 255 255 / 50%);
+  font-family: 'Oswald', sans-serif;
 }
 
 a {
@@ -73,7 +80,202 @@ a:focus {
 }
 
 /* About Section */
-.about {
+.about-container {
   display: flex;
-  justify-content: center;
+}
+
+.image-container {
+  border: 1px solid var(--secondary-color);
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-right: 25px;
+  width: auto;
+  background: var(--background);
+  box-shadow: var(--box-shadow);
+}
+
+img {
+  height: 300px;
+  width: 300px;
+}
+
+/* Projects Section */
+.buttons {
+  margin-top: 15px;
+  margin-bottom: 50px;
+}
+
+button {
+  min-width: 100px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-right: 10px;
+  border: 2px solid var(--primary-color);
+  font-size: 15px;
+  outline: none;
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+button:hover:not(.outline) {
+  filter: brightness(110%);
+}
+
+.primary {
+  background: var(--primary-color);
+  color: var(--on-primary);
+}
+
+.secondary {
+  border: 2px solid var(--secondary-color);
+}
+
+.secondary,
+.secondary:hover,
+.outline.secondary:hover {
+  background: var(--secondary-color);
+  color: var(--on-primary);
+}
+
+.outline {
+  background: var(--background);
+  color: var(--on-background);
+}
+
+.outline:hover {
+  background: var(--primary-color);
+  color: var(--on-primary);
+}
+
+.text-box {
+  width: 40%;
+  text-align: justify;
+  background: rgb(0 0 0 / 50%);
+  color: var(--on-primary);
+  border-radius: 10px;
+  padding: 30px;
+}
+
+p {
+  margin: 0;
+  line-height: 25px;
+}
+
+/* Contact Section */
+.icons {
+  font-size: 100px;
+  margin-right: 50px;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+.icons:hover {
+  color: rgb(0 0 0 / 50%);
+}
+.github{
+color: black;
+}
+.codepen{
+  color: black;
+}
+.linkedin{
+  color: #0E76A8;
+}
+.linkedin:hover{
+  color:rgba(0,119,181, 0.5)
+}
+.instagram{
+  color:white;
+  background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+  border-radius: 20%;
+}
+.medium {
+  background-color: white;
+  color:black;
+}
+/* Dark Mode Toggle */
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  z-index: 100;
+  position: fixed;
+  right: 25px;
+  top: 30px;
+}
+
+.theme-switch-wrapper span {
+  margin-right: 10px;
+  font-size: 1rem;
+}
+
+.toggle-text {
+  position: relative;
+  top: -8px;
+  right: 5px;
+  color: var(--on-background);
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+}
+
+.slider::before {
+  background: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 26px;
+}
+
+input:checked + .slider {
+  background: var(--primary-color);
+}
+
+input:checked + .slider::before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round::before {
+  border-radius: 50%;
+}
+
+.fas {
+  font-size: 30px;
+  margin-right: 5px;
+  color: rgb(228, 241, 42)
+}
+.fa-sun{
+  color: rgb(228, 241, 42)
+}
+.fa-moon{
+  color: rgb(157, 168, 3)
 }
